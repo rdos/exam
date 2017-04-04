@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">DubsDevel</string>
+    <string name="version_code" translatable="false">172</string>
+    <string name="version_name" translatable="false">0.3.0.0</string>
+    <string name="server_name" translatable="false">dev.SERVER1.DA</string>
+    <string name="environment_code">dev</string>
+</resources>

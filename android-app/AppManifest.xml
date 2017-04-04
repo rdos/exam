@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dubsapp"
+    android:logo="@mipmap/ic_launcher"
+    > <!-- xmlns:tools="http://schemas.android.com/tools" -->
+    <!-- android:versionCode="2" -->
+    <!--<supports-screens-->
+        <!--android:requiresSmallestWidthDp="240"-->
+        <!--android:compatibleWidthLimitDp="240"-->
+        <!--android:largestWidthLimitDp="240"/>-->
+
+    <!-- com.amazonaws.mobileconnectors.s3.transferutility.TransferService -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <!-- <uses-permission android:name="android.permission.GET_ACCOUNTS" /> -->
+    <!-- <uses-permission android:name="android.permission.READ_PROFILE" /> -->
+     <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+
+
+    <application
+        android:name="dubsapp.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:configChanges="locale"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <!--          //TODO: db_version ??? -->
+        <meta-data
+            android:name="dbVersion"
+            android:value="@integer/db_version">
+        </meta-data>
+        <!-- android:configChanges="locale|layoutDirection" -->
+        <!-- android:windowSoftInputMode="adjustNothing"> -->
+
+        <activity
+            android:name=".SideMenuAct"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MovieDtlA"
+            android:parentActivityName=".SideMenuAct">
+        </activity>
+
+        <activity
+            android:name=".MovieLoadDubA"
+            android:parentActivityName=".MovieDtlA">
+        </activity>
+
+        <activity
+            android:name=".TheaterDtlA"
+            android:parentActivityName=".SideMenuAct">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SideMenuAct" />
+        </activity>
+
+        <activity
+            android:name=".WatchA"
+            android:noHistory="true"
+            android:parentActivityName=".SideMenuAct">
+        </activity>
+
+        <activity
+            android:name=".MyDubsCheckInDlgA"
+            android:noHistory="true"
+            android:parentActivityName=".SideMenuAct">
+        </activity>
+
+        <activity
+            android:name=".MyDubsEnterCodeA"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:noHistory="true"
+            android:parentActivityName=".MyDubsCheckInDlgA">
+        </activity>
+
+        <activity
+            android:name=".TryDubs_2A"
+            android:parentActivityName=".SideMenuAct">
+        </activity>
+
+        <activity
+            android:name=".TrydubsLoadDubA"
+            android:parentActivityName=".TryDubs_2A">
+        </activity>
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true"/>
+
+    </application>
+
+</manifest>
